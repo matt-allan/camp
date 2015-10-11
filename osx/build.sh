@@ -7,12 +7,29 @@ set -e
 
 camp_path=/Applications/Camp
 
-# Copy our folder and the icon file to the Applications directory.
-# We copy an actual folder so that the icon metadata stays with it.
+# Setup Camp
 
-cp -r ./assets/skeleton/Camp ${camp_path}
+mkdir ${camp_path}
 mkdir ${camp_path}/bin
 mkdir ${camp_path}/lib
+mkdir ${camp_path}/scripts
+
+# Set the Camp folder icon
+sh ./setIcon.sh assets/camp.png ${camp_path}
+
+# Build Camp Terminal
+
+# Compile the apple script into a .app
+/usr/bin/osacompile -o ./tmp/Camp\ Terminal.app ./camp-terminal.scpt
+
+# Set the icon
+cp assets/terminal.icns ./tmp/Camp\ Terminal.app/Contents/Resources/applet.icns
+
+# copy to the Camp path
+mv ./tmp/Camp\ Terminal.app ${camp_path}/Camp\ Terminal.app
+
+# copy the shell startup script
+cp ./start.sh ${camp_path}/scripts/start.sh
 
 pushd tmp
 

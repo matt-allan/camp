@@ -5,4 +5,4 @@ build:
 
 clean:
 	rm -rf /Applications/Camp
-	cd tmp && ls | grep -v .gitignore | xargs rm -fr
+	cd tmp && find . -not -name \*.gitignore -print0 | xargs -0 rm -fr
