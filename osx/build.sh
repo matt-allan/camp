@@ -14,8 +14,6 @@ cp -r ./assets/skeleton/Camp ${camp_path}
 mkdir ${camp_path}/bin
 mkdir ${camp_path}/lib
 
-# Start building SRC
-
 pushd tmp
 
 # Get SQLite
@@ -23,6 +21,11 @@ pushd tmp
 curl -LOk https://www.sqlite.org/2015/sqlite-shell-osx-x86-3081101.zip
 unzip sqlite-shell-osx-x86-3081101.zip
 cp sqlite3 ${camp_path}/bin/sqlite3
+
+# Setup Psysh
+curl -O http://psysh.org/psysh
+chmod +x psysh
+mv psysh ${camp_path}/bin
 
 
 # Build PHP
@@ -73,10 +76,5 @@ ln -s ${php_path}/bin/php ${camp_path}/bin/php
 
 # Setup Composer
 curl -sS https://getcomposer.org/installer | php -- --install-dir=${camp_path}/bin --filename=composer
-
-# Setup Psysh
-curl -O http://psysh.org/psysh
-chmod +x psysh
-mv psysh ${camp_path}/bin
 
 echo DONE
