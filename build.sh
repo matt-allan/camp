@@ -73,3 +73,10 @@ ln -s ${php_path}/bin/php ${camp_path}/bin/php
 
 # Setup Composer
 curl -sS https://getcomposer.org/installer | php -- --install-dir=${camp_path}/bin --filename=composer
+
+# Setup Psysh
+curl -O http://psysh.org/psysh
+chmod +x psysh
+mv psysh ${camp_path}/bin
+
+echo DONE
