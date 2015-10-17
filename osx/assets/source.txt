@@ -1,0 +1,10 @@
+icon template:
+
+https://dribbble.com/shots/1614867-OS-X-Icon-Template-Sketch
+https://dribbble.com/shots/1614229-OS-X-Icon-Template
+
+icons:
+
+https://thenounproject.com/search/?q=campground&i=12503
+
+https://thenounproject.com/search/?q=terminal&i=39108
