@@ -14,8 +14,12 @@ mkdir ${camp_path}/bin
 mkdir ${camp_path}/lib
 mkdir ${camp_path}/scripts
 
+# Generate icons
+/usr/bin/iconutil -c icns assets/camp.iconset
+/usr/bin/iconutil -c icns assets/camp-terminal.iconset
+
 # Set the Camp folder icon
-sh ./setIcon.sh assets/camp.png ${camp_path}
+sh ./setIcon.sh assets/camp.icns ${camp_path}
 
 # Build Camp Terminal
 
@@ -23,7 +27,7 @@ sh ./setIcon.sh assets/camp.png ${camp_path}
 /usr/bin/osacompile -o ./tmp/Camp\ Terminal.app ./camp-terminal.scpt
 
 # Set the icon
-cp assets/terminal.icns ./tmp/Camp\ Terminal.app/Contents/Resources/applet.icns
+cp assets/camp-terminal.icns ./tmp/Camp\ Terminal.app/Contents/Resources/applet.icns
 
 # copy to the Camp path
 mv ./tmp/Camp\ Terminal.app ${camp_path}/Camp\ Terminal.app
@@ -93,5 +97,9 @@ ln -s ${php_path}/bin/php ${camp_path}/bin/php
 
 # Setup Composer
 curl -sS https://getcomposer.org/installer | php -- --install-dir=${camp_path}/bin --filename=composer
+
+# Build the DMG
+mv /Applications/Camp ./tmp/Camp
+appdmg appdmg.json ./tmp/camp-installer.dmg 
 
 echo DONE
