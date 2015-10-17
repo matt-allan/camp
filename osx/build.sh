@@ -6,12 +6,13 @@ set -e
 # Config Variables
 
 camp_path=/Applications/Camp
+camp_library_path=${camp_path}/library
 
 # Setup Camp
 
 mkdir ${camp_path}
 mkdir ${camp_path}/bin
-mkdir ${camp_path}/lib
+mkdir ${camp_path}/library
 mkdir ${camp_path}/scripts
 
 # Generate icons
@@ -48,6 +49,14 @@ curl -O http://psysh.org/psysh
 chmod +x psysh
 mv psysh ${camp_path}/bin
 
+# Build libedit
+ 
+curl -L http://thrysoee.dk/editline/libedit-20150325-3.1.tar.gz | tar xz
+pushd libedit-20150325-3.1
+./configure --prefix=${camp_library_path} --exec-prefix=${camp_library_path}
+make
+make install
+popd
 
 # Build PHP
 
@@ -73,7 +82,7 @@ pushd ${php_dirname}
     --enable-tokenizer \
     --with-openssl \
     --with-sqlite3=${camp_path}/bin \
-    --with-readline \
+    --with-libedit=${camp_library_path} \
     --enable-pdo \
     --enable-mbstring=all \
     --enable-posix \
