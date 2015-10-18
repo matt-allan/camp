@@ -3,6 +3,11 @@
 # Immediately exit if any commands fail.
 set -e
 
+if [ ! -d /Applications ] ; then
+    echo 'Applications directory must exist to build Camp.'
+    exit 1
+fi
+
 # Config Variables
 
 camp_path=/Applications/Camp
