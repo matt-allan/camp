@@ -1,3 +1,5 @@
+os:
+  - osx
 script: cd osx && make
 deploy:
   provider: releases
