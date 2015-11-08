@@ -114,6 +114,7 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=${camp_path}/b
 
 # Build the DMG
 mv /Applications/Camp ./tmp/Camp
-appdmg appdmg.json ./tmp/camp-installer.dmg 
+npm install
+./node_modules/appdmg/bin/appdmg appdmg.json ./tmp/camp-installer.dmg 
 
 echo DONE
