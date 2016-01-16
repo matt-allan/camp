@@ -1,10 +1,10 @@
 {
   "title": "Camp Installer",
   "icon": "assets/camp.icns",
-  "background": "assets/background.png",
+  "background": "assets/background.tiff",
   "icon-size": 80,
   "contents": [
-    { "x": 470, "y": 330, "type": "link", "path": "/Applications" },
-    { "x": 180, "y": 330, "type": "file", "path": "tmp/Camp" }
+    { "x": 370, "y": 120, "type": "link", "path": "/Applications" },
+    { "x": 80, "y": 120, "type": "file", "path": "tmp/Camp" }
   ]
 }
