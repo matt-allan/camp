@@ -1,3 +1,7 @@
+## Camp
+
+[![Build Status](https://travis-ci.org/matthew-james/camp.svg?branch=master)](https://travis-ci.org/matthew-james/camp)
+
 A Simple PHP Development Environment For OSX
 
 ![camp terminal screenshot](docs/assets/camp-terminal.png?raw=true)
@@ -31,6 +35,43 @@ Double click the downloaded file, then drag and drop Camp to your applications f
 
 You interact with Camp through the Camp Terminal.  You can find it in the `/Applications/Camp` directory.
 
-### Using PHP and Composer
+### PHP
 
-Once you launch the Camp Terminal, PHP and composer just work.  Type `php --help` or `composer --help` for more info.
+Once you launch the Camp Terminal, you can type `php -v` to see what version you are running.
+
+#### Psysh
+
+To play around with PHP from the shell, you use [psysh](http://psysh.org/).  Just type `psysh`, press enter, and you should be at a prompt ike this:
+
+```bash
+➜  ~  psysh
+Psy Shell v0.6.0-dev (PHP 5.6.14 — cli) by Justin Hileman
+>>> 
+```
+
+Now you can run PHP code!  Type this statement and press enter:
+
+```php
+echo "hello world!"
+```
+
+You should see something like this:
+
+```bash
+➜  ~  psysh
+Psy Shell v0.6.0-dev (PHP 5.6.14 — cli) by Justin Hileman
+>>> echo "hello world!"
+hello world!⏎
+=> null
+>>> 
+```
+
+#### Composer
+
+[Composer](https://getcomposer.org/) let's you download 'packages' of other peoples code and use them in your projects.  You can also use it to install more PHP programs like psysh that you run from the shell.
+
+Type `composer --help` for more info.
+
+#### Sqlite
+
+Sqlite is a tiny database you can use to let your apps save stuff.  To use it from the terminal, just type `sqlite3`.
