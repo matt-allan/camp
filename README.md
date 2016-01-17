@@ -39,6 +39,10 @@ Double click the downloaded file, then drag and drop Camp to your applications f
 
 You interact with Camp through the Camp Terminal.  You can find it in the `/Applications/Camp` directory.
 
+#### Unidentified Developer Warning
+
+Until I pay Apple $99 per year, the camp terminal is going to give you a warning dialog and not let you launch the terminal.  [Follow these instructions to launch it](https://support.apple.com/kb/ph18657?locale=en_US).
+
 ### PHP
 
 Once you launch the Camp Terminal, you can type `php -v` to see what version you are running.
