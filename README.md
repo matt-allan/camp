@@ -12,6 +12,8 @@ A Simple PHP Development Environment For OSX
 
 Camp is an easy to install, zero configuration alternative to Mamp and Vagrant for learning modern PHP development.  Instead of forcing you to learn about web servers and virtual machines, Camp lets you focus on PHP.
 
+You can read the blog post about why I built camp on [my blog](http://mattallan.org/2016/01/16/camp.html).
+
 ### What's Inside
 
 - PHP 5.6.10
