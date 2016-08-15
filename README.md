@@ -1,7 +1,7 @@
 ## Camp
 
-[![Build Status](https://travis-ci.org/matthew-james/camp.svg?branch=master)](https://travis-ci.org/matthew-james/camp)
-[![Download Stable](https://img.shields.io/badge/download-0.1-green.svg)](https://github.com/matthew-james/camp/releases/tag/0.1)
+[![Build Status](https://travis-ci.org/yuloh/camp.svg?branch=master)](https://travis-ci.org/yuloh/camp)
+[![Download Stable](https://img.shields.io/badge/download-0.1-green.svg)](https://github.com/yuloh/camp/releases/tag/0.1)
 
 
 A Simple PHP Development Environment For OSX
